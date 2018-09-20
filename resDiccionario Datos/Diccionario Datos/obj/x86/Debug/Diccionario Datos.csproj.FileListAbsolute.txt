@@ -52,3 +52,15 @@ C:\Users\elziz\Desktop\Mario Cosas\Estructura de archivos\resDiccionario Datos\D
 C:\Users\elziz\Desktop\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario_Datos.VentanaEntidadesEx.resources
 C:\Users\elziz\Desktop\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario_Datos.VentanaAtributosEx.resources
 C:\Users\elziz\Desktop\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario_Datos.VentanaRegistro.resources
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario Datos.exe
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario Datos.pdb
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\bin\Debug\Diccionario Datos.exe
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\bin\Debug\Diccionario Datos.pdb
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario Datos.csprojResolveAssemblyReference.cache
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario_De_Datos.Form1.resources
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario_Datos.VentanaAtributos.resources
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario_Datos.Properties.Resources.resources
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario_Datos.VentanaAtributosEx.resources
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario_Datos.VentanaEntidadesEx.resources
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario_Datos.VentanaRegistro.resources
+C:\Users\elziz\OneDrive\Documentos\GitHub\Diccionario-de-datos\resDiccionario Datos\Diccionario Datos\obj\x86\Debug\Diccionario Datos.csproj.GenerateResource.Cache

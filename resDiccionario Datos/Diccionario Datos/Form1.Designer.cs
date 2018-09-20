@@ -38,8 +38,10 @@
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.atributoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,8 +59,8 @@
             this.Entidades = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarArchivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -85,7 +87,9 @@
             this.toolStripSeparator1,
             this.guardarToolStripMenuItem,
             this.toolStripSeparator2,
-            this.abrirToolStripMenuItem});
+            this.abrirToolStripMenuItem,
+            this.toolStripSeparator8,
+            this.cerrarArchivoToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
@@ -141,21 +145,34 @@
             this.entidadToolStripMenuItem.AccessibleName = "entidad";
             this.entidadToolStripMenuItem.Enabled = false;
             this.entidadToolStripMenuItem.Name = "entidadToolStripMenuItem";
-            this.entidadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entidadToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.entidadToolStripMenuItem.Text = "Entidad";
             // 
-            // toolStripSeparator3
+            // toolStripSeparator7
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(115, 6);
             // 
             // atributoToolStripMenuItem
             // 
             this.atributoToolStripMenuItem.AccessibleName = "atributo";
             this.atributoToolStripMenuItem.Enabled = false;
             this.atributoToolStripMenuItem.Name = "atributoToolStripMenuItem";
-            this.atributoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.atributoToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.atributoToolStripMenuItem.Text = "Atributo";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(115, 6);
+            // 
+            // registroToolStripMenuItem
+            // 
+            this.registroToolStripMenuItem.AccessibleName = "registro";
+            this.registroToolStripMenuItem.Enabled = false;
+            this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.registroToolStripMenuItem.Text = "Registro";
             // 
             // eliminarToolStripMenuItem
             // 
@@ -244,9 +261,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 45);
+            this.dataGridView1.Location = new System.Drawing.Point(132, 46);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(781, 148);
+            this.dataGridView1.Size = new System.Drawing.Size(546, 148);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -271,7 +288,7 @@
             // Entidades
             // 
             this.Entidades.AutoSize = true;
-            this.Entidades.Location = new System.Drawing.Point(22, 29);
+            this.Entidades.Location = new System.Drawing.Point(129, 30);
             this.Entidades.Name = "Entidades";
             this.Entidades.Size = new System.Drawing.Size(69, 13);
             this.Entidades.TabIndex = 4;
@@ -302,18 +319,17 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // toolStripSeparator7
+            // cerrarArchivoToolStripMenuItem
             // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(149, 6);
+            this.cerrarArchivoToolStripMenuItem.AccessibleName = "cerrar";
+            this.cerrarArchivoToolStripMenuItem.Name = "cerrarArchivoToolStripMenuItem";
+            this.cerrarArchivoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.cerrarArchivoToolStripMenuItem.Text = "Cerrar Archivo";
             // 
-            // registroToolStripMenuItem
+            // toolStripSeparator8
             // 
-            this.registroToolStripMenuItem.AccessibleName = "registro";
-            this.registroToolStripMenuItem.Enabled = false;
-            this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.registroToolStripMenuItem.Text = "Registro";
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(150, 6);
             // 
             // Form1
             // 
@@ -372,6 +388,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem cerrarArchivoToolStripMenuItem;
     }
 }
 

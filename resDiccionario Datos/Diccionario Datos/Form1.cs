@@ -129,12 +129,23 @@ namespace Diccionario_De_Datos
                 case "abrir":
                     archivoToolStripMenuItem.HideDropDown();
                     f = new Archivo();
+                    listaEntidad = new List<Entidad>();
                     f.abrirArchivo(listaEntAux);
                     listaEntidad = f.lista;
                     //inertarEntidad(0);
                     this.activarMenus();
                     band4 = true;
                     break;
+                case "cerrar":
+                    archivoToolStripMenuItem.HideDropDown();
+                    listaEntidad = new List<Entidad>();
+                    f = new Archivo();
+                    //manejo_dataGrid();
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Refresh();
+                    desactivarMenus();
+                    break;
+
             }
 
         }
@@ -149,7 +160,9 @@ namespace Diccionario_De_Datos
                 case "atributo":
                     insertarAtributo();
                     break;
-
+                case "registro":
+                    insertarRegistro();
+                    break;
             }
         }
 
@@ -289,10 +302,10 @@ namespace Diccionario_De_Datos
 
             foreach (Entidad e in listaEntidad)
             {
-                if (compara(e.nombre,nombreEntidad) == true)
+                if (compara(e.nombre,nombreEntidad))
                 {
                     band1 = true;
-
+                    break;
                 }
                 else
                 {
@@ -384,7 +397,6 @@ namespace Diccionario_De_Datos
             nombreEntidad[29] = '\n';
 
         }
-
 
         private void insertarAtributo()
         {
@@ -524,6 +536,26 @@ namespace Diccionario_De_Datos
             nombreAtributo[29] = '\n';
         }
 
+        private void insertarRegistro()
+        {
+            VentanaEntidadesEx vE = new VentanaEntidadesEx(listaEntidad);
+            vE.ShowDialog();
+
+            for (int k = 0; k < vE.nombre.Length; k++)
+            {
+                nombreEntidad[k] = vE.nombre[k];
+            }
+
+            for (int i = 0; i < listaEntidad.Count; i++)
+            {
+                if (compara(nombreEntidad, listaEntidad[i].nombre) == true)
+                {
+                    VentanaRegistro vR = new VentanaRegistro(listaEntidad[i]);
+                    vR.ShowDialog();
+                }
+            }
+        }
+
         private void eliminarTodo()
         {
             foreach (Entidad e in listaEntidad)
@@ -549,6 +581,20 @@ namespace Diccionario_De_Datos
             groupBox1.Enabled = true;
             todoToolStripMenuItem.Enabled = true;
             registroToolStripMenuItem.Enabled = true;
+
+        }
+
+        private void desactivarMenus()
+        {
+            aToolStripMenuItem.Enabled = false;
+            entidadToolStripMenuItem.Enabled = false;
+            entidadToolStripMenuItem1.Enabled = false;
+            atributoToolStripMenuItem.Enabled = false;
+            atributoToolStripMenuItem1.Enabled = false;
+            atributoToolStripMenuItem2.Enabled = false;
+            groupBox1.Enabled = false;
+            todoToolStripMenuItem.Enabled = false;
+            registroToolStripMenuItem.Enabled = false;
 
         }
 
@@ -1023,15 +1069,22 @@ namespace Diccionario_De_Datos
         private bool menorCadena(char[] compra1, char[] compara2)
         {
             bool cadena = false;
-            for (int k = 0; k < compara2.Length; k++)
+            string c1 = new string(compra1);
+            string c2 = new string(compara2);
+            for (int k = 0; k < c2.Length; k++)
             {
-                if (compra1[k] > compara2[k])
+                if (c1[k] < c2[k])
                 {
                     cadena = true;
                     break;
                 }
                 else
-                    cadena = false;
+                {
+                    if (c1[k] > c2[k])
+                    {
+                        break;
+                    }
+                }
             }
             return cadena;
         }
@@ -1039,7 +1092,10 @@ namespace Diccionario_De_Datos
         private void acomodaApuntador(char[] nombAcomadar)
         {
             int posicion = 0;
+            int dondeEsta = 0;
             int apuntador = 0;
+            int anterior = 0;
+            Boolean acomodada = false;
             for (int i = 0; i < listaEntidad.Count; i++)
             {
                 if (compara(nombAcomadar, listaEntidad[i].nombre))
@@ -1054,43 +1110,66 @@ namespace Diccionario_De_Datos
             }
             else
             {
-                for (int i = 0; i < listaEntidad.Count; i++)
+                while (acomodada != true)
                 {
-                    if (menorCadena(listaEntidad[i].nombre, nombAcomadar))
+
+                    if (menorCadena(listaEntidad[dondeEsta].nombre, nombAcomadar) == true)
                     {
-                        buscaApuntador(listaEntidad[i].DE, listaEntidad[posicion].DE);
-                        listaEntidad[posicion].DSE = listaEntidad[i].DE;
+                        if (listaEntidad[dondeEsta].DSE == 0)
+                        {
+                            listaEntidad[dondeEsta].DSE = listaEntidad[posicion].DE;
+                            acomodada = true;
+                            break;
+                        }
+                        else
+                        {
+                            apuntador = buscaApuntador(listaEntidad[dondeEsta].DSE);
+                            dondeEsta = apuntador;
+                        }
+                        
                         
                     }
                     else
                     {
-                        if (listaEntidad[i].DSE == -1)
-                        {
-                            listaEntidad[i].DSE = listaEntidad[posicion].DE;
-                            listaEntidad[posicion].DSE = -1;
-
-
-                        }
-                        else
-                        {
-                            //listaEntidad[posicion].DSE = listaEntidad[i].DE;
-                        }
+                        
+                        anterior = buscaApuntadorSig(listaEntidad[dondeEsta].DE);
+                        listaEntidad[anterior].DSE = listaEntidad[posicion].DE;
+                        listaEntidad[posicion].DSE = listaEntidad[dondeEsta].DE;
+                        acomodada = true;
+                        break;
                     }
+                    //dondeEsta++;
                 }
             }
         }
 
-        private void buscaApuntador(long x, long y)
+        private int buscaApuntador(long x)
         {
+            int y = 0;
+            for (int i = 0; i < listaEntidad.Count; i++)
+            {
+                if (x == listaEntidad[i].DE)
+                {
+                    y = i;
+                }
+            }
+
+            return y;
+        }
+
+        private int buscaApuntadorSig(long x)
+        {
+            int y = 0;
             for (int i = 0; i < listaEntidad.Count; i++)
             {
                 if (x == listaEntidad[i].DSE)
                 {
-                    listaEntidad[i].DSE = y;
+                    y = i;
                 }
             }
-        }
 
+            return y;
+        }
 
         private void acomodarListaEnt()
         {
